@@ -203,21 +203,34 @@ input[type=submit] {
 .submitBtn
 {
     margin-top:40px;
-    width: 60%
+    width: 60%;
+    background-color:#8BB08B;
 }
 
 
 /*--------------------------------------------------------*/
 /* giver */
 #map {
-  height: 400px;
+  width: 500px;
   /* The height is 400 pixels */
-  width: 100%;
+  heigth:100%;
   text-align: center;
   margin-top: 40px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 #map img
 {
     margin-top: 8px;
 }
+
+#map div
+{
+
+    width:500px;
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
