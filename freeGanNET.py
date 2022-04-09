@@ -13,7 +13,7 @@ def giver():
 
 @app.route('/taker')
 def taker():
-    return render_template("takerhtml")
+    return render_template("taker.html")
 
 
 if __name__ == "__main__":

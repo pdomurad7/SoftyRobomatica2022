@@ -32,7 +32,7 @@
 				<div class="collapse navbar-collapse" id="navbarToggler">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="#">Home</a>
+							<a class="nav-link" href="{{ url_for('home') }}">Home</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Contact</a>
@@ -48,12 +48,16 @@
 
 	<section>
 		<div class="container-fluid nextSection motto">
-			<em>Show your stocks!</em>
+			<em>Find your way to make a delicious dish!</em>
 		</div>
 	</section>
 
 	<section>
-
+		<!--The div element for the map -->
+		<div id="map">
+			To make your dish you should go here:</br>
+			<img src="static/img/map.png" alt="Google maps">
+		</div>
 	</section>
 
 	<section>
@@ -65,7 +69,7 @@
 		</footer>
 	</section>
 
-	<script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="static/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

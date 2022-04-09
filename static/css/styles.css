@@ -81,6 +81,11 @@ a
 
 /*--------------------------------------------------------*/
 /* giver */
+.giverMainSection
+{
+    padding-left: 200px;
+    padding-right: 200px;
+}
 
 .putYourPhoto_description
 {
@@ -100,6 +105,7 @@ a
 {
     text-align: left;
     padding-top: 10px;
+    font-size: 20px;
 }
 
 .formElement
@@ -189,8 +195,29 @@ input[type=submit] {
     padding: 8px;
 }
 
+.wrapperOfSubmitBtn
+{
+    text-align: center;
+}
+
 .submitBtn
 {
     margin-top:40px;
     width: 60%
+}
+
+
+/*--------------------------------------------------------*/
+/* giver */
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+#map img
+{
+    margin-top: 8px;
 }
