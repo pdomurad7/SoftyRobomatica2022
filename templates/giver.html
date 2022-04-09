@@ -17,6 +17,27 @@
   <!--Font awesome-->
   <script src="https://kit.fontawesome.com/274784b2f8.js" crossorigin="anonymous"></script>
 
+	<script>
+		var global_components = "";
+
+		function addProduct()
+		{
+			/* Pobranie danych z textboxa */
+			var ingredient = document.getElementById('myInput').value
+			if(ingredient != "")
+			{
+				var componentValue = "<div>" + ingredient + "</div>"
+				globalThis.global_components =globalThis.global_components + componentValue
+				document.getElementById('myInput').value = "";
+
+				/* Dodanie nowego składnika do kodu HTML */
+				document.getElementById('products').innerHTML = globalThis.global_components;
+			}
+
+		}
+	</script>
+
+
 </head>
 
 <body>
@@ -55,21 +76,54 @@
 	<section>
 		<div class="putYourPhoto_wrapper nextSection">
 			<div class="putYourPhoto_description">
-				Add information about your products, so people can take them
+				Add informations about your products, so people can take them.
 			</div>
 
-			<div class="putYourPhoto_button">
-				 <form action = "http://localhost:5000/uploader" method = "POST"
-					 enctype = "multipart/form-data">
-					 <input type = "file" name = "file" />
-					 <input type = "submit"/>
-				  </form>
-			</div>
+			 <form class="form" autocomplete="off" action = "http://localhost:5000/uploader" method = "POST"
+				 enctype = "multipart/form-data">
+
+				 <div class = "row formElement">
+					 <div class="formDescription col-lg-8">Put photos of your ingredients</div>
+					 <div class="col-lg-4"><input  class="formImage" type = "file" name = "file" /></div>
+				 </div>
+
+				 <div class = "row formElement">
+					 <div class="formDescription col-lg-8">or.. write down what do you want to throw</div>
+					 <div  class="autocomplete col-lg-4">
+						<input  id="myInput" type="text" name="myCountry" placeholder="Ingredients">
+					 </div>
+				 </div>
+
+				 <div class = "row">
+					 <div class="formDescription col-lg-8"></div>
+					 <div class="col-lg-4">
+					 	<input class="autocomplete submitIngredient" type="txtbox_button" readonly="readonly" value="Add Ingredient" onclick="addProduct();">
+					 </div>
+				 </div>
+
+				 <div class = "row">
+					 <div class="formDescription col-lg-8"></div>
+					 <div class="col-lg-4">
+						 <div id="products"></div>
+					 </div>
+				 </div>
+
+				 <div class = "row">
+					 <div class="formDescription col-lg-8">Give your address</div>
+					 <div class="col-lg-4">
+					 	<input type="text" id="addressInput" name="fname">
+					 </div>
+				 </div>
+
+				<div class = "row">
+					<div class="col-lg-12 wrapperOfSubmitBtn">
+						<input class="submitBtn" type = "submit"/>
+					</div>
+
+				</div>
+			 </form>
 		</div>
 
-		<div class="putYourPhoto_wrapper nextSection">
-
-		</div>
 	</section>
 
 	<section>
@@ -80,8 +134,14 @@
 
 		</footer>
 	</section>
-	
-	<script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script src="static/js/func_autocomplete.js"></script>
+
+	<script>
+		autocomplete(document.getElementById("myInput"), countries);
+	</script>
+
+	<script src="static/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
