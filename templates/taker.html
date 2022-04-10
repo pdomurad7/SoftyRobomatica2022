@@ -32,7 +32,7 @@
 				<div class="collapse navbar-collapse" id="navbarToggler">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="#">Home</a>
+							<a class="nav-link" href="{{ url_for('home') }}">Home</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Contact</a>
@@ -48,11 +48,43 @@
 
 	<section>
 		<div class="container-fluid nextSection motto">
-			<em>Show your stocks!</em>
+			<em>Find your way to make a delicious dish!</em>
 		</div>
 	</section>
 
-	<section>
+	<section class="mainSection">
+		<div class="row makeDishes">
+			<div class="col-lg-4">
+				<h5>Currently you'll be able to prepare following dishes</h5>
+
+
+					<li>
+						Pizza - Sienkiewicza 5
+						Spaghetti - Sienkiewicza 5, Krucza 10
+					</li>
+
+
+						<ul>
+							{% for post1 in data1 %}
+							<li>{{post1}}</li>
+							{% endfor %}
+						</ul>
+
+
+			</div>
+
+
+
+			<!--The div element for the map -->
+			<div class="col-lg-8" id="map">
+				<div>
+					<h5>To make your dish you should go here:</br></h5>
+				</div>
+
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9775.435273044477!2d21.00482821297598!3d52.227782760745725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc8e0d1a10bf%3A0x3b45f8152db56020!2sTop%20Market!5e0!3m2!1sen!2spl!4v1649499874456!5m2!1sen!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		</div>
+
 
 	</section>
 
@@ -65,7 +97,7 @@
 		</footer>
 	</section>
 
-	<script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="static/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

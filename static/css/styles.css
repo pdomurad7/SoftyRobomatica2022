@@ -81,6 +81,11 @@ a
 
 /*--------------------------------------------------------*/
 /* giver */
+.giverMainSection
+{
+    padding-left: 200px;
+    padding-right: 200px;
+}
 
 .putYourPhoto_description
 {
@@ -100,6 +105,7 @@ a
 {
     text-align: left;
     padding-top: 10px;
+    font-size: 20px;
 }
 
 .formElement
@@ -189,8 +195,68 @@ input[type=submit] {
     padding: 8px;
 }
 
+.wrapperOfSubmitBtn
+{
+    text-align: center;
+}
+
+#ingredientsInputList
+{
+    visibility: hidden;
+    height: 0px;
+    padding: 0px;
+}
+
 .submitBtn
 {
     margin-top:40px;
-    width: 60%
+    width: 60%;
+    background-color:#8BB08B !important;
 }
+
+@media screen and (max-width: 1500px)
+{
+    .giverMainSection
+    {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+/*--------------------------------------------------------*/
+/* giver */
+#map {
+  max-width: 500px;
+  /* The height is 400 pixels */
+  heigth:100%;
+  text-align: center;
+  margin-top: 40px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+@media screen and (max-width: 1000px)
+{
+    #map
+    {
+        max-width: 0px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+
+#map img
+{
+    margin-top: 8px;
+}
+
+#map div
+{
+
+    width:500px;
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+

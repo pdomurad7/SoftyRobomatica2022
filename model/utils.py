@@ -7,7 +7,7 @@ import os
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.utils import Sequence
 
-from config_net import yolo_config, food_classes
+from model.config_net import yolo_config, food_classes
 
 
 def load_weights(model, weights_file_path):

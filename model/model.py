@@ -8,21 +8,21 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 from tensorflow.keras import layers, models, optimizers
 
-from custom_layers import yolov4_neck, yolov4_head, nms
-from utils import load_weights, get_detection_data, draw_bbox, voc_ap, draw_plot_func, read_txt_to_list
-from config_net import yolo_config,food_classes
-from loss import yolo_loss
+from model.custom_layers import yolov4_neck, yolov4_head, nms
+from model.utils import load_weights, get_detection_data, draw_bbox, voc_ap, draw_plot_func, read_txt_to_list
+from model.config_net import yolo_config,food_classes
+from model.loss import yolo_loss
 
 
 class Yolov4(object):
     def __init__(self,
                  weight_path=None,
-                 class_name_path='coco_classes.txt',
+                 class_name_path=r'model/class_names/coco_classes.txt',
                  config=yolo_config,
                  ):
         assert config['img_size'][0] == config['img_size'][1], 'not support yet'
         assert config['img_size'][0] % config['strides'][-1] == 0, 'must be a multiple of last stride'
-        self.class_names = [line.strip() for line in open(class_name_path).readlines()]
+        self.class_names = [line.strip() for line in open('model/class_names/coco_classes.txt').readlines()]
         self.img_size = yolo_config['img_size']
         self.num_classes = len(self.class_names)
         self.weight_path = weight_path
